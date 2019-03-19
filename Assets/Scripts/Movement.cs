@@ -9,6 +9,9 @@ public class Movement : MonoBehaviour
     public float jump;
     public float speed;
     public Rigidbody charac;
+    public Projectiles projectilePrefab;
+    public int maxProjectiles;
+    public List<Projectiles> projectiles = new List<Projectiles>();
 
     // Start is called before the first frame update
     void Start()
@@ -23,18 +26,22 @@ public class Movement : MonoBehaviour
         Jump();
     }
 
-    void Direct_Movement()
+    public void Direct_Movement()
     {
         horizonatal_mvmt = Input.GetAxis("Horizontal");
         vertical_mvmt = Input.GetAxis("Vertical");
         charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
     }
 
-    void Jump()
+    public void Jump()
     {
         if (Input.GetButtonDown("Jump"))
         {
             charac.AddForce(new Vector3(0f, jump * Time.deltaTime, 0f), ForceMode.Impulse);
         }
+    }
+    public void ProjectileDestroyed(Projectiles projectileThatWasDestroyed)
+    {
+        projectiles.Remove(projectileThatWasDestroyed);
     }
 }
