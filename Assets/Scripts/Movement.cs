@@ -19,8 +19,22 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Direct_Movement();
+        Jump();
+    }
+
+    void Direct_Movement()
+    {
         horizonatal_mvmt = Input.GetAxis("Horizontal");
         vertical_mvmt = Input.GetAxis("Vertical");
         charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
+    }
+
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            charac.AddForce(new Vector3(0f, jump * Time.deltaTime, 0f), ForceMode.Impulse);
+        }
     }
 }
