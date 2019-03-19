@@ -21,6 +21,6 @@ public class Movement : MonoBehaviour
     {
         horizonatal_mvmt = Input.GetAxis("Horizontal");
         vertical_mvmt = Input.GetAxis("Vertical");
-        charac.velocity = new Vector2(speed * horizonatal_mvmt, charac.velocity.y);
+        charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
     }
 }
