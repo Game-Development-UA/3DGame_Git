@@ -9,9 +9,9 @@ public class Movement : MonoBehaviour
     public float jump;
     public float speed;
     public Rigidbody charac;
-    public Projectiles projectilePrefab;
+    public Projectile projectilePrefab;
     public int maxProjectiles;
-    public List<Projectiles> projectiles = new List<Projectiles>();
+    public List<Projectile> projectiles = new List<Projectile>();
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
             charac.AddForce(new Vector3(0f, jump * Time.deltaTime, 0f), ForceMode.Impulse);
         }
     }
-    public void ProjectileDestroyed(Projectiles projectileThatWasDestroyed)
+    public void ProjectileDestroyed(Projectile projectileThatWasDestroyed)
     {
         projectiles.Remove(projectileThatWasDestroyed);
     }
