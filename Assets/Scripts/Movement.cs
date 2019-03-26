@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
     {
         Direct_Movement();
         Jump();
+        Sprint();
     }
 
     public void Direct_Movement()
@@ -34,8 +35,9 @@ public class Movement : MonoBehaviour
         horizonatal_mvmt = Input.GetAxis("Horizontal");
         vertical_mvmt = Input.GetAxis("Vertical");
         charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
+    }
 
-        //Sprint feature
+    public void Sprint() { 
         if (Input.GetButtonDown("Sprint"))
         {
             speed += RunSpeed;
@@ -43,7 +45,7 @@ public class Movement : MonoBehaviour
         }
         //Timer for Sprint
         timeLeft -= Time.deltaTime;
-        if(timeLeft < 0 && timeLeft >-0.01)
+        if(timeLeft <= 0 && timeLeft >-0.01)
         {
             speed -= RunSpeed;
             charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
@@ -52,6 +54,7 @@ public class Movement : MonoBehaviour
         }
         
     }
+
     public void Jump()
     {
         if (Input.GetButtonDown("Jump"))
