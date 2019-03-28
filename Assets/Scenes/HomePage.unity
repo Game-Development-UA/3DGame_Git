@@ -446,6 +446,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4042511093642362417, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092757573299, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092757573299, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -144
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511093514502338, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -93
+      objectReference: {fileID: 0}
     - target: {fileID: 4042511092470884521, guid: f8214a98ee24861428928a5e68db1b3c,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -455,6 +475,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092470884521, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_text
+      value: It's a Dog's World!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092470884521, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092470884521, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092470884521, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092470884521, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092470884521, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092470884521, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092470884521, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092843507526, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -136
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042511092843507526, guid: f8214a98ee24861428928a5e68db1b3c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 371
       objectReference: {fileID: 0}
     - target: {fileID: 4042511092843507527, guid: f8214a98ee24861428928a5e68db1b3c,
         type: 3}
