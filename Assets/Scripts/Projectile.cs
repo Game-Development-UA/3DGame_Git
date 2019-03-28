@@ -7,12 +7,19 @@ public class Projectile : MonoBehaviour
 	public Rigidbody rbody;
 	public float speed;
 	public float lifetime;
+    public AudioClip bark;
 
 	public SimpleController playerOwner;
 
 	float timer;
 
-	void Update() {
+    void Start()
+    {
+        GetComponent<AudioSource>().playOnAwake = false;
+        GetComponent<AudioSource>().clip = bark;
+    }
+
+    void Update() {
 		timer += Time.deltaTime;
 
 		if( timer > lifetime ) {
@@ -29,7 +36,8 @@ public class Projectile : MonoBehaviour
 		Destroyable destroyable = col.GetComponent<Destroyable>();
 
 		if( destroyable ) {
-			Destroy( destroyable.gameObject );
+            GetComponent<AudioSource>().Play();
+            Destroy( destroyable.gameObject );
 		}
 
 		playerOwner.ProjectileDestroyed( this );
