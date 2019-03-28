@@ -11,10 +11,12 @@ public class Movement : MonoBehaviour
     public float RunSpeed;
     public Rigidbody charac;
     float timeLeft = 3.0f; // Change for longer sprint
-
+    public float countdown = 0; //Timer
+    public int counter = 0; //score
     public Projectile projectilePrefab;
     public int maxProjectiles;
     public List<Projectile> projectiles = new List<Projectile>();
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,15 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        countdown += Time.deltaTime;
+        if (counter == 5)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("WinPage");
+        }
+        if (countdown >= 180) //make go down
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
+        }
         Direct_Movement();
         Jump();
         Sprint();
@@ -64,6 +75,13 @@ public class Movement : MonoBehaviour
     }
     public void ProjectileDestroyed(Projectile projectileThatWasDestroyed)
     {
+        counter += 1;
         projectiles.Remove(projectileThatWasDestroyed);
+    }
+    void OnGUI()
+    {
+        GUI.Label(new Rect(0, 0, 100, 50), "Time left:  " + countdown);
+        GUI.Label(new Rect(100, 0, 100, 50), "Score:  " + counter);
+
     }
 }
