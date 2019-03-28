@@ -109,6 +109,7 @@ MonoBehaviour:
   rbody: {fileID: 974291494987913982}
   speed: 3
   lifetime: 5
+  bark: {fileID: 8300000, guid: 6d45ef790d55b544297c9f9b20a03e7b, type: 3}
   playerOwner: {fileID: 0}
 --- !u!54 &974291494987913982
 Rigidbody:
