@@ -23,9 +23,9 @@ public class ThirdPersonCamera : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        PosX += Input.GetAxis("Mouse Y");
-        PosY += Input.GetAxis("Mouse X");
-        PosX = Mathf.Clamp(PosX, XMIN, XMAX);
+        //PosX += Input.GetAxis("Mouse Y");
+        //PosY += Input.GetAxis("Mouse X");
+        //PosX = Mathf.Clamp(PosX, XMIN, XMAX);
     }
     private void LateUpdate()
     {

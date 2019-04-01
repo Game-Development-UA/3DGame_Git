@@ -29,7 +29,11 @@ public class Projectile : MonoBehaviour
 			playerOwner.ProjectileDestroyed( this );
 			Destroy( this.gameObject );
 		}
-	}
+        if (counter == 5)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("WinPage");
+        }
+    }
 
 	void FixedUpdate() {
 		rbody.velocity = new Vector2( speed, 0f );
@@ -43,8 +47,8 @@ public class Projectile : MonoBehaviour
             //GetComponent<AudioSource>().Play();
             Destroy( destroyable.gameObject );
 		}
-
-		playerOwner.ProjectileDestroyed( this );
+        counter += 1;
+        playerOwner.ProjectileDestroyed( this );
 		Destroy( this.gameObject );
 	}
 

@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     public Rigidbody charac;
     float timeLeft = 3.0f; // Change for longer sprint
     public float countdown = 0; //Timer
-    public int counter = 0; //score
+    public int score = 0;
     public Projectile projectilePrefab;
     public int maxProjectiles;
     public List<Projectile> projectiles = new List<Projectile>();
@@ -21,31 +21,26 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = Projectile.counter;
     }
 
     // Update is called once per frame
     void Update()
     {
         countdown += Time.deltaTime;
-        if (counter == 5)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("WinPage");
-        }
+        
         if (countdown >= 180) //make go down
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
         }
-        Direct_Movement();
+
+        //move
+        horizonatal_mvmt = Input.GetAxis("Horizontal");
+        //vertical_mvmt = Input.GetAxis("Vertical");
+        charac.velocity = new Vector2(speed * horizonatal_mvmt, charac.velocity.y);
+
         Jump();
         Sprint();
-    }
-
-    public void Direct_Movement()
-    {
-        horizonatal_mvmt = Input.GetAxis("Horizontal");
-        vertical_mvmt = Input.GetAxis("Vertical");
-        charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
     }
 
     public void Sprint() { 
@@ -75,7 +70,6 @@ public class Movement : MonoBehaviour
     }
     public void ProjectileDestroyed(Projectile projectileThatWasDestroyed)
     {
-        counter += 1;
         projectiles.Remove(projectileThatWasDestroyed);
     }
     void OnGUI()
@@ -84,4 +78,5 @@ public class Movement : MonoBehaviour
         GUI.Label(new Rect(100, 0, 100, 50), "Score:  " + counter);
 
     }
+
 }
