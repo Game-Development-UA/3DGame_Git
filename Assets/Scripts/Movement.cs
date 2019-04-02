@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = Projectile.counter;
+        //score = Projectile.counter;
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
         //move
         horizonatal_mvmt = Input.GetAxis("Horizontal");
         //vertical_mvmt = Input.GetAxis("Vertical");
-        charac.velocity = new Vector2(speed * horizonatal_mvmt, charac.velocity.y);
+        charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, charac.velocity.z);
 
         Jump();
         Sprint();
@@ -75,7 +75,7 @@ public class Movement : MonoBehaviour
     void OnGUI()
     {
         GUI.Label(new Rect(0, 0, 100, 50), "Time left:  " + countdown);
-        GUI.Label(new Rect(100, 0, 100, 50), "Score:  " + counter);
+        //GUI.Label(new Rect(100, 0, 100, 50), "Score:  " + counter);
 
     }
 
