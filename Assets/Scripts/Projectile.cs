@@ -10,6 +10,10 @@ public class Projectile : MonoBehaviour
 	public float speed;
 	public float lifetime;
     public int counter = 0;
+    public float x;
+    public float y;
+    public float z;
+    public Vector3  pos;
     //public Text scoreText;
     //public AudioClip bark;
 
@@ -20,6 +24,13 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         //scoreText = GetComponent<Text>();
+
+        //Random Spawn
+        x = UnityEngine.Random.Range(-50, 50);
+        y = 0;
+        z = UnityEngine.Random.Range(-50, 50);
+        pos = new Vector3(x, y, z);
+        transform.position = pos;
     }
 
     void Update() {
