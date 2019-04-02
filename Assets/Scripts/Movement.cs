@@ -36,8 +36,8 @@ public class Movement : MonoBehaviour
 
         //move
         horizonatal_mvmt = Input.GetAxis("Horizontal");
-        //vertical_mvmt = Input.GetAxis("Vertical");
-        charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, charac.velocity.z);
+        vertical_mvmt = Input.GetAxis("Vertical");
+        charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, speed * vertical_mvmt);
 
         Jump();
         Sprint();
@@ -46,6 +46,7 @@ public class Movement : MonoBehaviour
     public void Sprint() { 
         if (Input.GetButtonDown("Sprint"))
         {
+            timeLeft = 3.0f;
             speed += RunSpeed;
             charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
         }
@@ -56,7 +57,6 @@ public class Movement : MonoBehaviour
             speed -= RunSpeed;
             charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
     
-        timeLeft = 3.0f;
         }
         
     }
