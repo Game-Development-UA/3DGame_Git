@@ -14,9 +14,9 @@ public class DogBoneRotate : MonoBehaviour
     public void Start()
     {
         //Random Spawn
-        x = UnityEngine.Random.Range(-50, 50);
+        x = UnityEngine.Random.Range(-200, 200);
         y = 0;
-        z = UnityEngine.Random.Range(-50, 50);
+        z = UnityEngine.Random.Range(-100, 100);
         pos = new Vector3(x, y, z);
         transform.position = pos;
     }
