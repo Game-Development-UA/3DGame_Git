@@ -79,4 +79,8 @@ public class Movement : MonoBehaviour
 
     }
 
+    public void EndGame()
+    {
+        if 
+    }
 }
