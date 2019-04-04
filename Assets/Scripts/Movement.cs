@@ -32,7 +32,6 @@ public class Movement : MonoBehaviour
         vertical_mvmt = Input.GetAxis("Vertical");
         charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, speed * vertical_mvmt);
 
-        EndGame();
         Jump();
         Sprint();
     }
@@ -73,21 +72,4 @@ public class Movement : MonoBehaviour
 
     }
 
-    public void EndGame()
-    {
-        countdown += Time.deltaTime;
-
-        if (countdown >= 180) //make go down
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
-        }
-
-
-        // if (score ==  total score) Need to make total score when all dog bones are collected
-        //{
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
-        //}
-
-
-    }
 }

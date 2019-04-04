@@ -12,9 +12,16 @@ public class SimpleController : MonoBehaviour
 
 	public List<Projectile> projectiles = new List<Projectile>();
 
-	void Update() {
+    public int counter = 0;
 
-		if( Input.GetButtonDown( "Fire1" ) ) {
+
+    void Update() {
+        if (counter == 5)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("WinPage");
+        }
+
+        if ( Input.GetButtonDown( "Fire1" ) ) {
 			if( projectiles.Count < maxProjectiles ) {
 				Projectile newProjectile = Instantiate<Projectile>( projectilePrefab );
 				newProjectile.transform.position = projectileSpawnLocation.position;
@@ -23,10 +30,18 @@ public class SimpleController : MonoBehaviour
 				projectiles.Add( newProjectile );
 			} 
 		}
+
 	}
 
 
 	public void ProjectileDestroyed( Projectile projectileThatWasDestroyed ) {
-		projectiles.Remove( projectileThatWasDestroyed );
+        counter += 1;
+        projectiles.Remove( projectileThatWasDestroyed );
 	}
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(100, 0, 100, 50), "Score:  " + counter);
+
+    }
 }

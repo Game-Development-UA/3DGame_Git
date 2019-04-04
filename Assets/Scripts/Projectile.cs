@@ -51,5 +51,10 @@ public class Projectile : MonoBehaviour
         playerOwner.ProjectileDestroyed( this );
 		Destroy( this.gameObject );
 	}
+    void OnGUI()
+    {
+        GUI.Label(new Rect(100, 0, 100, 50), "Score:  " + counter);
+
+    }
 
 }
