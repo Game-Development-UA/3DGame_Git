@@ -9,7 +9,7 @@ public class ThirdPersonCamera : MonoBehaviour
     public Transform lookAt;
     public Transform cTransform;
     private Camera Cam;
-    private float dist = 5.0f;
+    private float dist = 10.0f;
     private float PosX = 0.0f;
     private float PosY = 0.0f;
 
@@ -23,9 +23,9 @@ public class ThirdPersonCamera : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //PosX += Input.GetAxis("Mouse Y");
-        //PosY += Input.GetAxis("Mouse X");
-        //PosX = Mathf.Clamp(PosX, XMIN, XMAX);
+        PosX += Input.GetAxis("Mouse Y");
+        PosY += Input.GetAxis("Mouse X");
+        PosX = Mathf.Clamp(PosX, XMIN, XMAX);
     }
     private void LateUpdate()
     {

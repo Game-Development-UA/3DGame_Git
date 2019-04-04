@@ -849,6 +849,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 974291494987913977, guid: be10d7fb0265533428269ed980c0ba67,
     type: 3}
   projectiles: []
+  counter: 0
 --- !u!1 &1484434599
 GameObject:
   m_ObjectHideFlags: 0

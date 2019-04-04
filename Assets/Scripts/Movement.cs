@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     public Projectile projectilePrefab;
     public int maxProjectiles;
     public List<Projectile> projectiles = new List<Projectile>();
+    private new Vector3 rot;
 
 
     // Start is called before the first frame update
@@ -25,17 +26,39 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //move
+
+        move();
+        Jump();
+        Sprint();
+    }
+    public void move()
+    {
         horizonatal_mvmt = Input.GetAxis("Horizontal");
         vertical_mvmt = Input.GetAxis("Vertical");
         charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, speed * vertical_mvmt);
 
-        Jump();
-        Sprint();
-    }
+        //Character rotaion 
 
+        if (horizonatal_mvmt > 0)
+        {
+            rot.y = 0f;
+        }
+        if (horizonatal_mvmt < 0)
+        {
+            rot.y = 180f;
+        }
+        if (vertical_mvmt > 0)
+        {
+            rot.y = -90f;
+        }
+        if (vertical_mvmt < 0)
+        {
+            rot.y = 90f;
+        }
+        transform.eulerAngles = rot;
+    }
     public void Sprint() { 
         if (Input.GetButtonDown("Sprint"))
         {
