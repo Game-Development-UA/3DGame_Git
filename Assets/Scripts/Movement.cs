@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     float horizonatal_mvmt;
     float vertical_mvmt;
     public float jump;
+    public float JumpTime = 0f;
     public float speed;
     public float RunSpeed;
     public Rigidbody charac;
@@ -79,9 +80,10 @@ public class Movement : MonoBehaviour
 
     public void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && Time.time > JumpTime)
         {
             charac.AddForce(new Vector3(0f, jump * Time.deltaTime, 0f), ForceMode.Impulse);
+            JumpTime = Time.time + 1.5f;
         }
     }
     public void ProjectileDestroyed(Projectile projectileThatWasDestroyed)
