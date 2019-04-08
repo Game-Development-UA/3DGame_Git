@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public Projectile projectilePrefab;
     public int maxProjectiles;
     public List<Projectile> projectiles = new List<Projectile>();
-    private new Vector3 rot;
+    private Vector3 rot;
 
 
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         move();
@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour
     {
         horizonatal_mvmt = Input.GetAxis("Horizontal");
         vertical_mvmt = Input.GetAxis("Vertical");
-        charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, speed * vertical_mvmt);
+        charac.velocity = new Vector3(horizonatal_mvmt*speed, charac.velocity.y, vertical_mvmt*speed);
 
         //Character rotaion 
 
@@ -60,6 +60,7 @@ public class Movement : MonoBehaviour
         }
         transform.eulerAngles = rot;
     }
+
     public void Sprint() { 
         if (Input.GetButtonDown("Sprint"))
         {
@@ -75,7 +76,6 @@ public class Movement : MonoBehaviour
             charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
     
         }
-        
     }
 
     public void Jump()
@@ -83,7 +83,7 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Time.time > JumpTime)
         {
             charac.AddForce(new Vector3(0f, jump * Time.deltaTime, 0f), ForceMode.Impulse);
-            JumpTime = Time.time + 1.5f;
+            JumpTime = Time.time + 1.5f; // change to increase or deacrease delay of jump
         }
     }
     public void ProjectileDestroyed(Projectile projectileThatWasDestroyed)
