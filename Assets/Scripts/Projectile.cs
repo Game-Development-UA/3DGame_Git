@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
 	public Rigidbody rbody;
 	public float speed;
 	public float lifetime;
-    public int counter = 0;
+    public int counter;
 
     //public Text scoreText;
     //public AudioClip bark;
@@ -26,13 +26,13 @@ public class Projectile : MonoBehaviour
         timer += Time.deltaTime;
         //scoreText.text = counter.ToString();
         if ( timer > lifetime ) {
-			playerOwner.ProjectileDestroyed( this );
+			playerOwner.ProjectileDestroyedTime( this );
 			Destroy( this.gameObject );
 		}
-        if (counter == 5)
+        /*if (counter == 5)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("WinPage");
-        }
+        }*/
     }
 
 	void FixedUpdate() {
@@ -47,7 +47,7 @@ public class Projectile : MonoBehaviour
             //GetComponent<AudioSource>().Play();
             Destroy( destroyable.gameObject );
 		}
-        counter += 1;
+        //counter += 1;
         playerOwner.ProjectileDestroyed( this );
 		Destroy( this.gameObject );
 	}

@@ -92,6 +92,11 @@ public class Movement : MonoBehaviour
     }
     public void ProjectileDestroyed(Projectile projectileThatWasDestroyed)
     {
+        //score += 1;
+        projectiles.Remove(projectileThatWasDestroyed);
+    }
+    public void ProjectileDestroyedTime(Projectile projectileThatWasDestroyed)
+    {
         projectiles.Remove(projectileThatWasDestroyed);
     }
     void OnGUI()

@@ -13,14 +13,14 @@ public class SimpleController : MonoBehaviour
 	public List<Projectile> projectiles = new List<Projectile>();
     //public Transform dogPosition;
 
-    //public int counter = 0;
+    public int counter = 0;
 
 
     void Update() {
-        /*if (counter == 5)
+        if (counter == 5)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("WinPage");
-        }*/
+        }
 
         if ( Input.GetButtonDown( "Fire1" ) ) {
 			if( projectiles.Count < maxProjectiles ) {
@@ -38,9 +38,15 @@ public class SimpleController : MonoBehaviour
 
 
 	public void ProjectileDestroyed( Projectile projectileThatWasDestroyed ) {
-        //counter += 1;
+        counter += 1;
         projectiles.Remove( projectileThatWasDestroyed );
 	}
+
+    public void ProjectileDestroyedTime(Projectile projectileThatWasDestroyed)
+    {
+        //counter += 1;
+        projectiles.Remove(projectileThatWasDestroyed);
+    }
 
     /*void OnGUI()
     {
