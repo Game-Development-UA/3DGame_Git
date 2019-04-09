@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -738,15 +738,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -2.66
       objectReference: {fileID: 0}
-    - target: {fileID: 6400010, guid: 2bfeabf2118dc654c95e17f1025bb137, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6400012, guid: 2bfeabf2118dc654c95e17f1025bb137, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6400014, guid: 2bfeabf2118dc654c95e17f1025bb137, type: 3}
+    - target: {fileID: 6400000, guid: 2bfeabf2118dc654c95e17f1025bb137, type: 3}
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
@@ -766,7 +758,15 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6400000, guid: 2bfeabf2118dc654c95e17f1025bb137, type: 3}
+    - target: {fileID: 6400010, guid: 2bfeabf2118dc654c95e17f1025bb137, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400012, guid: 2bfeabf2118dc654c95e17f1025bb137, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400014, guid: 2bfeabf2118dc654c95e17f1025bb137, type: 3}
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
@@ -815,7 +815,6 @@ MonoBehaviour:
     type: 3}
   maxProjectiles: 4
   projectiles: []
-  spawnLocation: {x: 0, y: 0, z: 0}
 --- !u!54 &1446831751
 Rigidbody:
   m_ObjectHideFlags: 0

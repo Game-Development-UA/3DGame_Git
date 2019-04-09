@@ -25,7 +25,9 @@ public class SimpleController : MonoBehaviour
         if ( Input.GetButtonDown( "Fire1" ) ) {
 			if( projectiles.Count < maxProjectiles ) {
 				Projectile newProjectile = Instantiate<Projectile>( projectilePrefab);
-				newProjectile.transform.position = projectileSpawnLocation.forward;
+				newProjectile.transform.position = projectileSpawnLocation.position;
+				newProjectile.transform.forward = projectileSpawnLocation.right;
+
 				newProjectile.playerOwner = this;
 
 				projectiles.Add( newProjectile );

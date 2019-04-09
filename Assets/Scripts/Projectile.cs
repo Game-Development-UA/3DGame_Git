@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
     }
 
 	void FixedUpdate() {
-		rbody.velocity = new Vector3( speed, 0f, 0f );
+		rbody.velocity = transform.forward * speed;
 	}
 
 	void OnTriggerEnter( Collider col ) {
