@@ -11,20 +11,21 @@ public class SimpleController : MonoBehaviour
 	public Projectile projectilePrefab;
 
 	public List<Projectile> projectiles = new List<Projectile>();
+    //public Transform dogPosition;
 
-    public int counter = 0;
+    //public int counter = 0;
 
 
     void Update() {
-        if (counter == 5)
+        /*if (counter == 5)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("WinPage");
-        }
+        }*/
 
         if ( Input.GetButtonDown( "Fire1" ) ) {
 			if( projectiles.Count < maxProjectiles ) {
-				Projectile newProjectile = Instantiate<Projectile>( projectilePrefab );
-				newProjectile.transform.position = projectileSpawnLocation.position;
+				Projectile newProjectile = Instantiate<Projectile>( projectilePrefab);
+				newProjectile.transform.position = projectileSpawnLocation.forward;
 				newProjectile.playerOwner = this;
 
 				projectiles.Add( newProjectile );
@@ -35,13 +36,13 @@ public class SimpleController : MonoBehaviour
 
 
 	public void ProjectileDestroyed( Projectile projectileThatWasDestroyed ) {
-        counter += 1;
+        //counter += 1;
         projectiles.Remove( projectileThatWasDestroyed );
 	}
 
-    void OnGUI()
+    /*void OnGUI()
     {
         GUI.Label(new Rect(100, 0, 100, 50), "Score:  " + counter);
 
-    }
+    }*/
 }

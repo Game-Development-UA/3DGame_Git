@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
     }
 
 	void FixedUpdate() {
-		rbody.velocity = new Vector2( speed, 0f );
+		rbody.velocity = new Vector3( speed, 0f, 0f );
 	}
 
 	void OnTriggerEnter( Collider col ) {
@@ -51,10 +51,11 @@ public class Projectile : MonoBehaviour
         playerOwner.ProjectileDestroyed( this );
 		Destroy( this.gameObject );
 	}
-    void OnGUI()
+
+    /*void OnGUI()
     {
         GUI.Label(new Rect(100, 0, 100, 50), "Score:  " + counter);
 
-    }
+    }*/
 
 }

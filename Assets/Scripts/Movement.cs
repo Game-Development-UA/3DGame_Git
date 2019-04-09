@@ -29,7 +29,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        countdown += Time.deltaTime;
+        if (countdown >= 180)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
+        }
         move();
         Jump();
         Sprint();

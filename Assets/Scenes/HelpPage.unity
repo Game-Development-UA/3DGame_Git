@@ -634,7 +634,7 @@ MonoBehaviour:
 
     Throw Projectile: Click
 
-    Objective: Collect 5 Dog Bones in 3 minutes to win!'
+    Objective: Collect 5 Dog Bones in 3 minutes (180 seconds) to win!'
 --- !u!222 &1589143546
 CanvasRenderer:
   m_ObjectHideFlags: 0
