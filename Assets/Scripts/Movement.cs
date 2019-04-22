@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Movement : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Movement : MonoBehaviour
     public int maxProjectiles;
     public List<Projectile> projectiles = new List<Projectile>();
     private Vector3 rot;
+    public List<Dog_Abilities> abilities;
 
 
     // Start is called before the first frame update
