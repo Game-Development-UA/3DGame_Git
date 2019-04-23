@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     public float jump;
     public float JumpTime = 0f;
     public float speed;
-    public float RunSpeed;
+    [SerializeField] private float RunSpeed;
     public Rigidbody charac;
     float timeLeft = 3.0f; // Change for longer sprint
     public float countdown = 0; //Timer
@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         countdown += Time.deltaTime;
         if (countdown >= 180)
@@ -38,7 +38,8 @@ public class Movement : MonoBehaviour
         }
         move();
         Jump();
-        Sprint();
+        if (Input.GetButtonDown("Sprint"))
+            StartCoroutine(Sprint(3.0f));
     }
     public void move()
     {
@@ -67,21 +68,26 @@ public class Movement : MonoBehaviour
         transform.eulerAngles = rot;
     }
 
-    public void Sprint() { 
-        if (Input.GetButtonDown("Sprint"))
+    IEnumerator Sprint(float duration)
+    {
+
+        float i = 0;
+        float rate = 1 / duration;
+        while (i < duration)
         {
-            timeLeft = 3.0f;
-            speed += RunSpeed;
+            speed = RunSpeed;
             charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
+            i += Time.deltaTime *duration;
+            yield return speed = 3;
         }
         //Timer for Sprint
-        timeLeft -= Time.deltaTime;
-        if(timeLeft <= 0 && timeLeft >-0.01)
-        {
-            speed -= RunSpeed;
-            charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
+        ///timeLeft -= Time.deltaTime;
+        ///if(timeLeft <= 0 && timeLeft >-0.01)
+        ///{
+            ///speed -= RunSpeed;
+            ///charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
     
-        }
+        ///}
     }
 
     public void Jump()

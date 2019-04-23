@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -807,7 +807,7 @@ MonoBehaviour:
   jump: 200
   JumpTime: 0
   speed: 3
-  RunSpeed: 4
+  RunSpeed: 10
   charac: {fileID: 1446831751}
   countdown: 3
   score: 0
@@ -815,6 +815,7 @@ MonoBehaviour:
     type: 3}
   maxProjectiles: 4
   projectiles: []
+  abilities: []
 --- !u!54 &1446831751
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -862,6 +863,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 974291494987913977, guid: be10d7fb0265533428269ed980c0ba67,
     type: 3}
   projectiles: []
+  counter: 0
 --- !u!1 &1484434599
 GameObject:
   m_ObjectHideFlags: 0
