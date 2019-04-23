@@ -108,10 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbody: {fileID: 974291494987913982}
-  speed: 3
+  speed: 12
   lifetime: 5
   counter: 0
-  scoreText: {fileID: 0}
   playerOwner: {fileID: 0}
 --- !u!54 &974291494987913982
 Rigidbody:

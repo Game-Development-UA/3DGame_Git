@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
 	public float speed;
 	public float lifetime;
     public int counter;
+    ///[SerializeField] private float dist;
 
     //public Text scoreText;
     //public AudioClip bark;
@@ -23,6 +24,7 @@ public class Projectile : MonoBehaviour
     }
 
     void Update() {
+        ///StartCoroutine(Distance(3.0f));
         timer += Time.deltaTime;
         //scoreText.text = counter.ToString();
         if ( timer > lifetime ) {
@@ -34,7 +36,18 @@ public class Projectile : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("WinPage");
         }*/
     }
-
+    ///IEnumerator Distance( float dist)
+    ///{
+       /// float i = 0;
+        ///while (i > dist)
+        ///{
+           /// playerOwner.ProjectileDestroyedTime(this);
+            ///Destroy(this.gameObject);
+            ///i += Time.deltaTime;
+            ///yield return 0;
+        ///}
+    ///}
+        
 	void FixedUpdate() {
 		rbody.velocity = transform.forward * speed;
 	}

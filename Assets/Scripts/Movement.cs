@@ -80,14 +80,7 @@ public class Movement : MonoBehaviour
             i += Time.deltaTime *duration;
             yield return speed = 3;
         }
-        //Timer for Sprint
-        ///timeLeft -= Time.deltaTime;
-        ///if(timeLeft <= 0 && timeLeft >-0.01)
-        ///{
-            ///speed -= RunSpeed;
-            ///charac.velocity = new Vector3(speed * horizonatal_mvmt, charac.velocity.y, vertical_mvmt * speed);
-    
-        ///}
+        
     }
 
     public void Jump()
